@@ -18,14 +18,11 @@ export class UserEffects {
     this.actions$.pipe(
       ofType(loadUsers),
       mergeMap((action) => {
-        console.log('loadUsers action:', action); // Debugging statement
         return this.userService.getUsers(action.page).pipe(
           map((users) => {
-            console.log('Users data received:', users); // Debugging statement
-            return loadUsersSuccess({ users: users.data , total_pages: users.total_pages });
+            return loadUsersSuccess({ users: users.data , total_pages: users.total_pages , total: users.total });
           }),
           catchError((error) => {
-            console.error('Error occurred:', error); // Debugging statement
             return of(loadUsersFailure({ error }));
           })
         );
@@ -37,14 +34,14 @@ export class UserEffects {
     this.actions$.pipe(
       ofType(loadUser),
       mergeMap((action) => {
-        console.log('loadUser action:', action); // Debugging statement
+        console.log('loadUser action:', action);
         return this.userService.getUserById(action.id).pipe(
           map((user) => {
-            console.log('User data received:', user); // Debugging statement
+            console.log('User data received:', user);
             return loadUserSuccess({ user: user.data });
           }),
           catchError((error) => {
-            console.error('Error occurred:', error); // Debugging statement
+            console.error('Error occurred:', error);
             return of(loadUserFailure({ error }));
           })
         );
