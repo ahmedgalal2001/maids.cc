@@ -9,6 +9,11 @@ export const selectUsers = createSelector(
   (state: UserState) => state.users
 );
 
+export const selectOnlyUser = createSelector(
+  selectUser,
+  (state: UserState) => state.user
+);
+
 export const selectUserStatus = createSelector(
   selectUser,
   (state) => state.status
@@ -17,6 +22,11 @@ export const selectUserStatus = createSelector(
 export const selectUserTotalPages = createSelector(
   selectUser,
   (state) => state.total_pages
+);
+
+export const selectUserTotalUsers = createSelector(
+  selectUser,
+  (state) => state.totalUsers
 );
 
 export const selectUserError = createSelector(
