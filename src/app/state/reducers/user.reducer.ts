@@ -14,12 +14,19 @@ enum UserStateProgress {
   succeeded = 'succeeded',
   failed = 'failed',
 }
-
+export interface User {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+}
 export interface UserState {
-  users: any[];
+  users: User[];
   error: string | null;
-  user: any | null;
+  user: User | null;
   total_pages: number;
+  totalUsers: number;
   status: 'loading' | 'idle' | 'succeeded' | 'failed';
 }
 
@@ -27,6 +34,7 @@ export const initialState: UserState = {
   users: [],
   user: null,
   total_pages: 0,
+  totalUsers: 0,
   status: UserStateProgress.idle,
   error: null,
 };
@@ -38,11 +46,12 @@ const _userReducer = createReducer(
     status: UserStateProgress.loading,
     error: null,
   })),
-  on(loadUsersSuccess, (state, { users, total_pages }) => ({
+  on(loadUsersSuccess, (state, { users, total_pages , total }) => ({
     ...state,
     users,
     status: UserStateProgress.succeeded,
     total_pages: total_pages,
+    totalUsers: total,
   })),
   on(loadUsersFailure, (state, { error }) => ({
     ...state,
