@@ -14,6 +14,7 @@ import {
   selectUsers,
   selectUserStatus,
   selectUserTotalPages,
+  selectUserTotalUsers,
 } from '../../state/selectors/user.selector';
 
 @Component({
@@ -31,7 +32,7 @@ import {
 export class UserListComponent implements OnInit {
   users$: Observable<any[]> = this.store.select(selectUsers);
   totalPages$: Observable<number> = this.store.select(selectUserTotalPages);
-
+  totalUsers$: Observable<number> = this.store.select(selectUserTotalUsers);
   loading$: Observable<boolean> = this.store.pipe(
     select(selectUserStatus),
     map((status) => status === 'loading')
@@ -44,9 +45,6 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.loadUsers();
-    console.log(
-      this.totalPages$.subscribe((totalPages) => console.log(totalPages))
-    );
   }
 
   loadUsers() {
