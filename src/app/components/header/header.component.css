@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+}
+
+
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+mat-form-field {
+  width: 100%;
+  max-width: 600px;
+}
+
+
+mat-form-field .mat-form-field-infix {
+  padding: 0 16px;
+}
