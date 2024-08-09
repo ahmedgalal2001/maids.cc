@@ -15,8 +15,9 @@
     <h3>{{ user.first_name }} {{ user.last_name }}</h3>
   </mat-card>
   <mat-paginator
-    [length]="totalPages$ | async"
-    [pageSize]="6"
+    [length]="totalUsers$ | async"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
     (page)="onPageChange($event)"
   ></mat-paginator>
 </div>
