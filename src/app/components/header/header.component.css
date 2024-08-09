@@ -1,21 +1,29 @@
-header {
+.header-container {
   width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-mat-toolbar {
+.toolbar {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-
-mat-form-field {
+.search-container {
   width: 100%;
   max-width: 600px;
 }
 
+.search-field {
+  width: 100%;
+}
 
-mat-form-field .mat-form-field-infix {
-  padding: 0 16px;
+mat-form-field {
+  width: 100%;
+}
+
+mat-toolbar {
+  background-color: #3f51b5;
+  color: white;
 }
