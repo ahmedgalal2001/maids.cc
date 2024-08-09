@@ -1,27 +1,39 @@
-# UserDashboard
+# Maids Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+Maids Dashboard is a web application for managing user details. It is built using Angular and NgRx for state management.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/ahmedgalal2001/maids.cc.git
+    cd maids.cc
+    ```
 
-## Build
+2. Install the dependencies:
+    ```sh
+    npm install
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Run the application:
+    ```sh
+    ng serve
+    ```
 
-## Running unit tests
+4. Open your browser and navigate to `http://localhost:4200`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+### User Details Component
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The User Details component displays detailed information about a user, including their avatar, name, ID, and email. It also includes a loading spinner that is displayed while the user data is being fetched.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Template
