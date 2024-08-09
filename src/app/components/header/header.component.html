@@ -1,9 +1,11 @@
-<header>
-  <mat-toolbar color="primary">
-    <mat-form-field appearance="fill">
-      <mat-label>Search by ID</mat-label>
-      <input matInput (input)="onSearch($event)" placeholder="Enter ID">
-    </mat-form-field>
+<header class="header-container">
+  <mat-toolbar color="primary" class="toolbar">
+    <div class="search-container">
+      <mat-form-field appearance="fill" class="search-field">
+        <mat-label>Search by ID</mat-label>
+        <input matInput (input)="onSearch($event)" placeholder="Enter ID">
+      </mat-form-field>
+    </div>
   </mat-toolbar>
 </header>
 
