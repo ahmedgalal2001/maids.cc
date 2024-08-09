@@ -1,6 +1,17 @@
-<div class="user-details">
-  <button (click)="goBack()">Back</button>
-  <img [src]="user.avatar" alt="{{user.first_name}}">
-  <h2>{{user.first_name}} {{user.last_name}}</h2>
-  <p>ID: {{user.id}}</p>
+<div *ngIf="loading$ | async" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!(loading$ | async)">
+  <div *ngIf="user$ | async as user" class="user-details">
+    <button (click)="goBack()" class="back-button">Back</button>
+    <div class="user-info">
+      <img [src]="user.avatar" alt="{{ user.first_name }}" class="user-avatar" />
+      <div class="user-text">
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+        <p>ID: {{ user.id }}</p>
+        <p>Email: {{ user.email }}</p>
+      </div>
+    </div>
+  </div>
 </div>
